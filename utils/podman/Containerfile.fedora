@@ -1,0 +1,10 @@
+FROM fedora:latest 
+
+RUN dnf -y upgrade \
+ && dnf -y install \
+                   cmake \
+                   gcc-c++ \
+                   make \
+		   python3-pip \
+ && dnf clean all \
+ && python3 -m pip install --upgrade pip conan
