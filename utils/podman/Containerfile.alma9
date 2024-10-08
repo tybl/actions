@@ -1,0 +1,10 @@
+FROM almalinux:9
+
+RUN dnf -y upgrade \
+ && dnf -y install \
+                   cmake \
+		   gcc-toolset-13 \
+		   make \
+		   python3-pip \
+ && dnf clean all \
+ && python3 -m pip install --upgrade pip conan
